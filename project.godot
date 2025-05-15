@@ -14,9 +14,19 @@ config/name="Finish the Knight"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=160
+window/size/viewport_height=90
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Terrain"
 
 [rendering]
 

@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cije06o0yhf7x"]
+
+[ext_resource type="Texture2D" uid="uid://cej5w347ovnj2" path="res://black_tile_sheet.png" id="1_yr1mu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixi4d"]
+resource_name = "terrain"
+texture = ExtResource("1_yr1mu")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[resource]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_ixi4d")
