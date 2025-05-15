@@ -15,6 +15,7 @@ position = Vector2(8, 28)
 position = Vector2(61, 66)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(83.6, 64.3)
 process_callback = 0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
