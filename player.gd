@@ -24,5 +24,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# prevent being 1 pixel into floor
-	if is_on_floor():
-		position.y = round(position.y)
+	#if is_on_floor():
+		#position.y = round(position.y)

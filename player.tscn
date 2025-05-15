@@ -14,3 +14,8 @@ shape = SubResource("RectangleShape2D_sh265")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../CollisionShape2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.128911, 0.439112, 0.383096, 1)
+offset = Vector2(-0.5, -0.5)
+polygon = PackedVector2Array(-3, -2, 4, -2, 4, 3, -3, 3)
