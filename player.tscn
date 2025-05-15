@@ -13,7 +13,7 @@ script = ExtResource("1_4flbx")
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../CollisionShape2D")
+remote_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.128911, 0.439112, 0.383096, 1)
