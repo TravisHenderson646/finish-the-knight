@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvg320pj7354l"]
+
+[ext_resource type="PackedScene" uid="uid://cnnqfws53tbro" path="res://tile_map_layer.tscn" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://cugqa6gidmyyw" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player.tscn" id="2_feb5d"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_feb5d")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_e2o6t")]
+
+[node name="Player" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(61, 66)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(61, 66)
+process_callback = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.5
