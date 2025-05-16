@@ -9,13 +9,11 @@
 script = ExtResource("1_feb5d")
 
 [node name="Level1" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(8, 28)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
 position = Vector2(61, 66)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(83.6, 64.3)
 process_callback = 0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
