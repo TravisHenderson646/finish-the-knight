@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvg320pj7354l"]
 
 [ext_resource type="PackedScene" uid="uid://cx57a4tjaiu4e" path="res://test_level.tscn" id="1_feb5d"]
-[ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
 
 [node name="Game" type="Node"]

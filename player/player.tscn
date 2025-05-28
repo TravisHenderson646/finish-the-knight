@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://eyreqdvbvuwy"]
+[gd_scene load_steps=4 format=3 uid="uid://eyreqdvbvuwy"]
 
-[ext_resource type="Script" uid="uid://dat3b6iiuml7m" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dat3b6iiuml7m" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cgygwdd7k0k1x" path="res://player/state_machine.gd" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(7, 5)
@@ -20,3 +21,6 @@ remote_path = NodePath("..")
 position = Vector2(3, 2)
 color = Color(0.128911, 0.439112, 0.383096, 1)
 polygon = PackedVector2Array(-3, -2, 4, -2, 4, 3, -3, 3)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_onrkg")
