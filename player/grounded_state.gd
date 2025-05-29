@@ -3,7 +3,8 @@ extends State
 
 
 func enter() -> void:
-	print('wow')
+	pass
+	#print('grounded state entered')
 
 
 func exit() -> void:
@@ -11,6 +12,9 @@ func exit() -> void:
 
 
 func update() -> void:
+	player.dash_count = 1
+	if player.dash():
+		return
 	if player.jump():
 		return
 	player.apply_direction()

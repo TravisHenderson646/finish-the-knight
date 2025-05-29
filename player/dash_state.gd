@@ -3,7 +3,7 @@ extends State
 
 
 func enter() -> void:
-	print('dash state entered')
+	#print('dash state entered')
 	player.dash_duration_timer.start()
 
 

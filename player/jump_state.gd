@@ -3,7 +3,7 @@ extends State
 
 
 func enter() -> void:
-	print('jump state entered')
+	#print('jump state entered')
 	player.velocity.y = player.JUMP_VELOCITY
 
 
@@ -14,6 +14,7 @@ func exit() -> void:
 func update() -> void:
 	if player.dash():
 		return
+	player.attack()
 	player.apply_gravity()
 	player.apply_direction()
 	if !Input.is_action_pressed('jump'):
