@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-@onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D
+@onready var camera_remote_transform_2d: RemoteTransform2D = $CameraRemoteTransform2D
 @onready var state_machine: StateMachine = $StateMachine
 @onready var nail: Area2D = $Nail
 #enum STATES {GROUNDED, JUMP, FALL, DASH}

@@ -8,12 +8,13 @@ var states_list: Dictionary
 
 func _ready() -> void:
 	states_list = {
-		grounded = Grounded.new(player, self),
+		run = Run.new(player, self),
+		idle = Idle.new(player, self),
 		fall = Fall.new(player, self),
 		jump = Jump.new(player, self),
 		dash = Dash.new(player, self),
 	}
-	state = states_list.grounded
+	state = states_list.fall
 
 func update() -> void:
 	state.update()

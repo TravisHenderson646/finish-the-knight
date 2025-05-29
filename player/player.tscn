@@ -14,7 +14,7 @@ script = ExtResource("1_4flbx")
 position = Vector2(3.5, 2.5)
 shape = SubResource("RectangleShape2D_sh265")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+[node name="CameraRemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
