@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 #enum STATES {GROUNDED, JUMP, FALL, DASH}
 #var state: STATES = STATES.GROUNDED
-var direction: float
+var direction := Vector2()
 
 @export_category('Movement Stats')
 @export var SPEED := 40.0
@@ -39,7 +39,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func process_input():
-	direction = Input.get_axis('left', 'right')
+	direction.x = Input.get_axis('left', 'right')
+	direction.y = Input.get_axis('up', 'down')
 	if Input.is_action_just_pressed('jump'):
 		jump_buffer_timer.start()
 	if Input.is_action_just_pressed('dash'):
@@ -63,9 +64,9 @@ func jump() -> bool:
 
 
 func apply_direction() -> void:
-	if direction:
-		velocity.x = direction * SPEED
-		if direction == 1:
+	if direction.x:
+		velocity.x = direction.x * SPEED
+		if direction.x == 1:
 			dash_direction = DASH_DIRECTIONS.RIGHT
 		else:
 			dash_direction = DASH_DIRECTIONS.LEFT
