@@ -15,6 +15,6 @@ func update() -> void:
 	player.apply_direction()
 	if player.is_on_floor():
 		if player.direction.x == 0:
-			state_machine.change_state(state_machine.states_list.run)
-		else:
 			state_machine.change_state(state_machine.states_list.idle)
+		else:
+			state_machine.change_state(state_machine.states_list.run)

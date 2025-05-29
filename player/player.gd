@@ -116,6 +116,6 @@ func apply_gravity() -> void:
 	velocity.y += gravity
 
 
-func _on_nail_area_entered(area: Area2D) -> void:
+func _on_nail_area_entered(_area: Area2D) -> void:
 	velocity.y = JUMP_VELOCITY/1.5
 	dash_count = 1
