@@ -16,7 +16,6 @@ static func new_particle(_position: Vector2, _velocity: Vector2, _duration: int)
 
 func _physics_process(_delta: float) -> void:
 	position += velocity
-	print(position)
 	duration -= 1
 	if duration == 0:
 		queue_free()

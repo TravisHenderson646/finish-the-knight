@@ -2,8 +2,10 @@ class_name Run
 extends State
 
 
+var previous_direction := 0
+
 func enter() -> void:
-	pass
+	previous_direction = player.direction.x
 	#print('grounded state entered')
 
 
@@ -23,3 +25,16 @@ func update() -> void:
 		return
 	if player.direction.x == 0:
 		state_machine.change_state(state_machine.states_list.idle)
+		return
+	if previous_direction != player.direction.x:
+		previous_direction = player.direction.x
+		spawn_dust()
+
+
+func spawn_dust() -> void:
+	if player.direction.x > 0:
+		var dust := Particle.new_particle(Vector2(player.position.x - 1, player.position.y + 4), Vector2(-player.direction.x, -1)/3, 20)
+		player.get_tree().root.add_child(dust)
+	else:
+		var dust := Particle.new_particle(Vector2(player.position.x + 8, player.position.y + 4), Vector2(-player.direction.x, -1)/3, 20)
+		player.get_tree().root.add_child(dust)
