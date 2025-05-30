@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var camera_remote_transform_2d: RemoteTransform2D = $CameraRemoteTransform2D
 @onready var state_machine: StateMachine = $StateMachine
-@onready var nail: Area2D = $Nail
+@onready var drill: Area2D = $Drill
 #enum STATES {GROUNDED, JUMP, FALL, DASH}
 #var state: STATES = STATES.GROUNDED
 var direction := Vector2()
@@ -13,12 +13,14 @@ var direction := Vector2()
 @export var gravity:= 3.33
 
 @export_category('Jump Stats')
+@export var jump_unlocked = true
 @export var JUMP_VELOCITY := -100.0
 @export var jump_release_snap := 0.2
 var can_jump := false
 var jump_buffer_timer := FrameTimer.new(5, self)
 
 @export_category('Dash Stats')
+@export var dash_unlocked = true
 @export var dash_duration := 7
 @export var dash_speed := 150.0
 @export var dash_cooldown := 30
@@ -34,6 +36,7 @@ enum DASH_DIRECTIONS {LEFT = -1, RIGHT = 1}
 var dash_direction: DASH_DIRECTIONS = DASH_DIRECTIONS.RIGHT
 
 @export_category('Attack Stats')
+@export var attack_unlocked = true
 @export var attack_duration := 10
 @export var attack_cooldown := 30
 var attack_duration_timer := FrameTimer.new(attack_duration, self)
@@ -42,8 +45,8 @@ var attack_buffer_timer := FrameTimer.new(5, self)
 
 
 func _ready() -> void:
-	remove_child(nail)
-	attack_duration_timer.timeout.connect(func(): remove_child(nail))
+	remove_child(drill)
+	attack_duration_timer.timeout.connect(func(): remove_child(drill))
 
 
 func _physics_process(_delta: float) -> void:
@@ -76,15 +79,15 @@ func process_input():
 
 
 func attack() -> void:
-	if attack_buffer_timer.is_stopped or !attack_cooldown_timer.is_stopped:
+	if !attack_unlocked or attack_buffer_timer.is_stopped or !attack_cooldown_timer.is_stopped:
 		return
 	attack_buffer_timer.stop()
 	attack_cooldown_timer.start()
-	add_child(nail)
+	add_child(drill)
 	attack_duration_timer.start()
 
 func dash() -> bool:
-	if dash_buffer_timer.is_stopped or !dash_cooldown_timer.is_stopped or !dash_count:
+	if !dash_unlocked or dash_buffer_timer.is_stopped or !dash_cooldown_timer.is_stopped or !dash_count:
 		return false
 	dash_count -= 1
 	dash_buffer_timer.stop()
@@ -94,7 +97,7 @@ func dash() -> bool:
 
 
 func jump() -> bool:
-	if jump_buffer_timer.is_stopped:
+	if !jump_unlocked or jump_buffer_timer.is_stopped:
 		return false
 	jump_buffer_timer.stop()
 	state_machine.change_state(state_machine.states_list.jump)
@@ -116,6 +119,7 @@ func apply_gravity() -> void:
 	velocity.y += gravity
 
 
-func _on_nail_area_entered(_area: Area2D) -> void:
-	velocity.y = JUMP_VELOCITY/1.5
+func _on_drill_area_entered(_area: Area2D) -> void:
+	state_machine.change_state(state_machine.states_list.falldasda)
+	velocity.y = JUMP_VELOCITY/0.5
 	dash_count = 1

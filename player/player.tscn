@@ -25,15 +25,15 @@ polygon = PackedVector2Array(-3, -2, 4, -2, 4, 3, -3, 3)
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_onrkg")
 
-[node name="Nail" type="Area2D" parent="."]
+[node name="Drill" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Nail"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drill"]
 polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
 
-[node name="Polygon2D" type="Polygon2D" parent="Nail"]
+[node name="Polygon2D" type="Polygon2D" parent="Drill"]
 color = Color(0.317904, 0.238572, 0.293556, 1)
 polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
 
-[connection signal="area_entered" from="Nail" to="." method="_on_nail_area_entered"]
+[connection signal="area_entered" from="Drill" to="." method="_on_drill_area_entered"]
