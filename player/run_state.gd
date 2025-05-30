@@ -5,8 +5,10 @@ extends State
 var previous_direction := 0
 
 func enter() -> void:
+	#print('run state entered')
 	previous_direction = player.direction.x
-	#print('grounded state entered')
+	player.dash_count = 1
+	player.double_jump_count = 1
 
 
 func exit() -> void:

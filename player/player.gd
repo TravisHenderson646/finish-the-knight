@@ -14,10 +14,12 @@ var direction := Vector2()
 
 @export_category('Jump Stats')
 @export var jump_unlocked = true
+@export var double_jump_unlocked = true
 @export var JUMP_VELOCITY := -100.0
-@export var jump_release_snap := 0.2
+@export var jump_release_snap := 0.5
 var can_jump := false
 var jump_buffer_timer := FrameTimer.new(5, self)
+var double_jump_count = 1
 
 @export_category('Dash Stats')
 @export var dash_unlocked = true
@@ -87,11 +89,8 @@ func attack() -> void:
 	attack_duration_timer.start()
 
 func dash() -> bool:
-	if !dash_unlocked or dash_buffer_timer.is_stopped or !dash_cooldown_timer.is_stopped or !dash_count:
+	if !dash_unlocked or dash_buffer_timer.is_stopped or !dash_cooldown_timer.is_stopped or !dash_count or !attack_duration_timer.is_stopped:
 		return false
-	dash_count -= 1
-	dash_buffer_timer.stop()
-	dash_cooldown_timer.start()
 	state_machine.change_state(state_machine.states_list.dash)
 	return true
 
@@ -99,8 +98,14 @@ func dash() -> bool:
 func jump() -> bool:
 	if !jump_unlocked or jump_buffer_timer.is_stopped:
 		return false
-	jump_buffer_timer.stop()
 	state_machine.change_state(state_machine.states_list.jump)
+	return true
+
+
+func double_jump() -> bool:
+	if !double_jump_unlocked or jump_buffer_timer.is_stopped or !double_jump_count:
+		return false
+	state_machine.change_state(state_machine.states_list.double_jump)
 	return true
 
 
@@ -120,6 +125,7 @@ func apply_gravity() -> void:
 
 
 func _on_drill_area_entered(_area: Area2D) -> void:
-	state_machine.change_state(state_machine.states_list.falldasda)
-	velocity.y = JUMP_VELOCITY/0.5
+	state_machine.change_state(state_machine.states_list.fall)
+	velocity.y = JUMP_VELOCITY/1.5
 	dash_count = 1
+	double_jump_count = 1

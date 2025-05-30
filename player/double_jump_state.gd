@@ -1,10 +1,11 @@
-class_name Jump
+class_name DoubleJump
 extends State
 
 
 func enter() -> void:
-	#print('jump state entered')
-	player.velocity.y = player.JUMP_VELOCITY
+	#print('double jump state entered')
+	player.velocity.y = player.JUMP_VELOCITY * 0.75
+	player.double_jump_count -= 1
 	player.jump_buffer_timer.stop()
 	var dust := Particle.new_particle(Vector2(player.position.x + 4, player.position.y + 4), Vector2(-player.direction.x/2, 1)/3, 10)
 	player.get_tree().root.add_child(dust)
@@ -16,8 +17,6 @@ func exit() -> void:
 
 func update() -> void:
 	if player.dash():
-		return
-	if player.double_jump():
 		return
 	player.attack()
 	player.apply_gravity()

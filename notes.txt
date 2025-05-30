@@ -1,0 +1,4 @@
+tighten up jump
+	feels like it should be slightly snappier (on jump release) at the top and less snappy at the bottom (maybe an s curve?)
+
+might need to include an attack_lockout so you can't dash while attacking and stuff like that

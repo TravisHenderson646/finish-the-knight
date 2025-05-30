@@ -3,12 +3,14 @@ extends State
 
 
 func enter() -> void:
-	pass
 	#print('fall state entered')
+	pass
 
 
 func update() -> void:
 	if player.dash():
+		return
+	if player.double_jump():
 		return
 	player.attack()
 	player.apply_gravity()

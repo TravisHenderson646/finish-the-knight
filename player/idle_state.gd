@@ -2,8 +2,9 @@ class_name Idle
 extends State
 
 func enter() -> void:
-	pass
-	#print('grounded state entered')
+	#print('idle state entered')
+	player.dash_count = 1
+	player.double_jump_count = 1
 
 
 func exit() -> void:
@@ -11,7 +12,6 @@ func exit() -> void:
 
 
 func update() -> void:
-	player.dash_count = 1
 	if player.dash():
 		return
 	if player.jump():

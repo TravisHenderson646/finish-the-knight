@@ -12,6 +12,7 @@ func _ready() -> void:
 		idle = Idle.new(player, self),
 		fall = Fall.new(player, self),
 		jump = Jump.new(player, self),
+		double_jump = DoubleJump.new(player, self),
 		dash = Dash.new(player, self),
 	}
 	state = states_list.fall
