@@ -124,8 +124,13 @@ func apply_gravity() -> void:
 	velocity.y += gravity
 
 
-func _on_drill_area_entered(_area: Area2D) -> void:
-	state_machine.change_state(state_machine.states_list.fall)
-	velocity.y = JUMP_VELOCITY/1.5
-	dash_count = 1
-	double_jump_count = 1
+func _on_drill_area_entered(area: Area2D) -> void:
+	print(area)
+	
+	if area.is_in_group('pogoable'):
+		state_machine.change_state(state_machine.states_list.fall)
+		velocity.y = JUMP_VELOCITY/1.5
+		dash_count = 1
+		double_jump_count = 1
+		if area is GoldDeposit:
+			area.on_hit()

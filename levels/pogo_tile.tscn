@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_ecai2")
 color = Color(0.357872, 0.21918, 0.334855, 1)
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["pogoable"]]
 collision_layer = 4
 collision_mask = 0
 

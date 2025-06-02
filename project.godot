@@ -26,11 +26,12 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
 player=""
+pogoable=""
 
 [input]
 
@@ -87,6 +88,7 @@ attack={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Terrain"
 2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Drill"
 
 [rendering]
 
