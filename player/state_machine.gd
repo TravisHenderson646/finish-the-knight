@@ -14,6 +14,7 @@ func _ready() -> void:
 		jump = Jump.new(player, self),
 		double_jump = DoubleJump.new(player, self),
 		dash = Dash.new(player, self),
+		knockback = Knockback.new(player, self)
 	}
 	state = states_list.fall
 

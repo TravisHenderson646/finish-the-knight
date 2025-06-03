@@ -31,6 +31,6 @@ func _physics_process(_delta):
 	if is_stopped:
 		return
 	if frames_remaining == 0:
-		timeout.emit()
 		is_stopped = true
+		timeout.emit()
 	frames_remaining -= 1
