@@ -2,9 +2,10 @@ class_name Idle
 extends State
 
 func enter() -> void:
-	#print('idle state entered')
+	print('idle state entered')
 	player.dash_count = 1
 	player.double_jump_count = 1
+	player.velocity.x = 0
 
 
 func exit() -> void:

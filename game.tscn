@@ -1,16 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvg320pj7354l"]
+[gd_scene load_steps=8 format=3 uid="uid://cvg320pj7354l"]
 
 [ext_resource type="PackedScene" uid="uid://cx57a4tjaiu4e" path="res://levels/test_level.tscn" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://slug.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://ddnf6gl0dc7ty" path="res://dash_pup.tscn" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://cxt610picxjet" path="res://double_jump_pup.tscn" id="6_eow3j"]
+[ext_resource type="PackedScene" uid="uid://be8n0ykpqr2cm" path="res://drill_pup.tscn" id="7_j5wjh"]
 
 [node name="Game" type="Node"]
 
 [node name="TestLevel" parent="." instance=ExtResource("1_feb5d")]
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(-114, 39)
+position = Vector2(152, 15)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -22,3 +25,12 @@ script = ExtResource("4_fc0e3")
 
 [node name="Enemy" parent="." instance=ExtResource("5_7jktm")]
 position = Vector2(-127, 41)
+
+[node name="DashPUP" parent="." instance=ExtResource("5_ryrav")]
+position = Vector2(97, 8)
+
+[node name="DoubleJumpPUP" parent="." instance=ExtResource("6_eow3j")]
+position = Vector2(29, 43)
+
+[node name="DrillPUP" parent="." instance=ExtResource("7_j5wjh")]
+position = Vector2(57, 6)

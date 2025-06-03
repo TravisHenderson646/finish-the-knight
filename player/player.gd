@@ -178,6 +178,8 @@ func _on_drill_area_entered(area: Area2D) -> void:
 func _on_drill_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		body.get_hit()
+	if body is BreakableTile:
+		body.destroy()
 	if body.is_in_group('pogoable'):
 		pogo()
 
@@ -185,3 +187,15 @@ func _on_drill_body_entered(body: Node2D) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		get_hit(body)
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area is DashPUP:
+		dash_unlocked = true
+		area.destroy()
+	if area is DoubleJumpPUP:
+		double_jump_unlocked = true
+		area.destroy()
+	if area is DrillPUP:
+		attack_unlocked = true
+		area.destroy()

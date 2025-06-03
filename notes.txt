@@ -2,6 +2,9 @@ tighten up jump
 	feels like it should be slightly snappier (on jump release) at the top and less snappy at the bottom (maybe an s curve?)
 
 
+everything that interacts with the drill is on the enemies layer including tiles
+
+
 could make a helper class with static helper functions for example to handle:
 	unhit_polygon.polygon = hit_polygon.polygon
 	unhit_polygon.position = hit_polygon.position

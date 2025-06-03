@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8n0ykpqr2cm"]
+
+[ext_resource type="Script" uid="uid://ccw47rukc5jhq" path="res://drill_pup.gd" id="1_sd63f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgkab"]
+size = Vector2(10, 7)
+
+[node name="DrillPUP" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_sd63f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_mgkab")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-1, 0)
+color = Color(0.417878, 0.297448, 0.409006, 1)
+polygon = PackedVector2Array(-4, -4, 6, -4, 6, 0, 2, 3, 0, 3, -4, 0)

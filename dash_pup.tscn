@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddnf6gl0dc7ty"]
+
+[ext_resource type="Script" uid="uid://c8xnohln4qwry" path="res://dash_pup.gd" id="1_7mv2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgkab"]
+size = Vector2(10, 7)
+
+[node name="DashPUP" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_7mv2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_mgkab")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.417878, 0.297448, 0.409006, 1)
+polygon = PackedVector2Array(-4, -4, 4, -4, 6, 0, 4, 4, -4, 4, -2, 0)
