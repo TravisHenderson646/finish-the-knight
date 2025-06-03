@@ -4,9 +4,8 @@ extends CharacterBody2D
 @onready var camera_remote_transform_2d: RemoteTransform2D = $CameraRemoteTransform2D
 @onready var state_machine: StateMachine = $StateMachine
 @onready var drill: Area2D = $Drill
-#enum STATES {GROUNDED, JUMP, FALL, DASH}
-#var state: STATES = STATES.GROUNDED
-var direction := Vector2()
+var direction := Vector2i()
+var coins := 0
 
 @export_category('Movement Stats')
 @export var SPEED := 40.0
@@ -58,17 +57,17 @@ func _physics_process(_delta: float) -> void:
 
 
 func process_input():
-	direction.x = Input.get_axis('left', 'right')
-	if direction.x > 0.5:
+	var raw_x_input := Input.get_axis('left', 'right')
+	if raw_x_input > 0.5:
 		direction.x = 1
-	elif direction.x < -0.5:
+	elif raw_x_input < -0.5:
 		direction.x = -1
 	else:
 		direction.x = 0
-	direction.y = Input.get_axis('up', 'down')
-	if direction.y > 0.5:
+	var raw_y_input := Input.get_axis('up', 'down')
+	if raw_y_input > 0.5:
 		direction.y = 1
-	elif direction.y < -0.5:
+	elif raw_y_input < -0.5:
 		direction.y = -1
 	else:
 		direction.y = 0
@@ -124,13 +123,35 @@ func apply_gravity() -> void:
 	velocity.y += gravity
 
 
-func _on_drill_area_entered(area: Area2D) -> void:
-	print(area)
+func pogo() -> void:
+	state_machine.change_state(state_machine.states_list.fall)
+	velocity.y = JUMP_VELOCITY/1.5
+	dash_count = 1
+	double_jump_count = 1
+
+
+func get_hit() -> void:
+	pass
+	#if timer.iframes.is_stopped == true:
+		#state_machine.change_state(state_machine.states_list.knockback)
+		#apply i frames
 	
+
+
+func _on_drill_area_entered(area: Area2D) -> void:
+	#print(area)
 	if area.is_in_group('pogoable'):
-		state_machine.change_state(state_machine.states_list.fall)
-		velocity.y = JUMP_VELOCITY/1.5
-		dash_count = 1
-		double_jump_count = 1
+		pogo()
 		if area is GoldDeposit:
 			area.on_hit()
+
+
+func _on_drill_body_entered(body: Node2D) -> void:
+	if body is Slug:
+		pogo()
+		body.get_hit()
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body is Slug:
+		get_hit()

@@ -17,18 +17,24 @@ script = ExtResource("1_yudlv")
 position = Vector2(4, -4)
 shape = SubResource("RectangleShape2D_yudlv")
 
-[node name="Polygon2D" type="Polygon2D" parent="Unhit"]
-color = Color(0.344575, 0.294028, 0.0755353, 1)
-polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-
 [node name="Hit" type="CollisionShape2D" parent="."]
+process_mode = 4
+visible = false
 position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_dj5uc")
 
-[node name="Polygon2D" type="Polygon2D" parent="Hit"]
-color = Color(0.345098, 0.294118, 0.0745098, 1)
-polygon = PackedVector2Array(-4, -3, 4, -3, 4, 3, -4, 3)
-
-[node name="Destroyed" type="Polygon2D" parent="."]
+[node name="DestroyedPolygon" type="Polygon2D" parent="."]
+visible = false
 color = Color(0.345098, 0.294118, 0.0745098, 1)
 polygon = PackedVector2Array(0, 0, 0, -2, 8, -2, 8, 0)
+
+[node name="UnhitPolygon" type="Polygon2D" parent="."]
+position = Vector2(4, -4)
+color = Color(0.344575, 0.294028, 0.0755353, 1)
+polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[node name="HitPolygon" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(4, -3)
+color = Color(0.345098, 0.294118, 0.0745098, 1)
+polygon = PackedVector2Array(-4, -3, 4, -3, 4, 3, -4, 3)

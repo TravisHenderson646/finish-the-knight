@@ -6,7 +6,7 @@ func enter() -> void:
 	#print('jump state entered')
 	player.velocity.y = player.JUMP_VELOCITY
 	player.jump_buffer_timer.stop()
-	var dust := Particle.new_particle(Vector2(player.position.x + 4, player.position.y + 4), Vector2(-player.direction.x/2, 1)/3, 10)
+	var dust := Particle.create_particle(Vector2(player.position.x + 4, player.position.y + 4), Vector2(-player.direction.x/2.0, 1)/3.0, 10)
 	player.get_tree().root.add_child(dust)
 
 

@@ -5,7 +5,7 @@ var velocity: Vector2
 var duration: int
 const PARTICLE = preload('res://particle.tscn')
 
-static func new_particle(_position: Vector2, _velocity: Vector2, _duration: int) -> Particle:
+static func create_particle(_position: Vector2, _velocity: Vector2, _duration: int) -> Particle:
 	var new_particle = PARTICLE.instantiate()
 	new_particle.velocity =_velocity
 	new_particle.duration = _duration

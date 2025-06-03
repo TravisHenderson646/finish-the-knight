@@ -2,16 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cx57a4tjaiu4e" path="res://levels/test_level.tscn" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
-[ext_resource type="PackedScene" uid="uid://kfb7bginexhk" path="res://gold_deposit.tscn" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://slug.tscn" id="5_7jktm"]
 
 [node name="Game" type="Node"]
 
 [node name="TestLevel" parent="." instance=ExtResource("1_feb5d")]
-position = Vector2(9, -1)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(25, 24)
+position = Vector2(-114, 39)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -21,5 +20,5 @@ drag_vertical_enabled = true
 drag_top_margin = 0.38
 script = ExtResource("4_fc0e3")
 
-[node name="GoldDeposit" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(14, 47)
+[node name="Enemy" parent="." instance=ExtResource("5_7jktm")]
+position = Vector2(-127, 41)
