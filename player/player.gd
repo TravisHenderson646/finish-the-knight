@@ -43,6 +43,9 @@ var dash_direction: DASH_DIRECTIONS = DASH_DIRECTIONS.RIGHT
 var attack_duration_timer := FrameTimer.new(attack_duration, self)
 @export var attack_cooldown := 30
 var attack_cooldown_timer := FrameTimer.new(attack_cooldown, self)
+var attack_buffer_timer := FrameTimer.new(5, self)
+
+@export_category('Combat Stats')
 @export var iframes_duration := 40
 var iframes_duration_timer := FrameTimer.new(iframes_duration, self)
 @export var knockback_duration := 4
@@ -51,8 +54,6 @@ var knockback_duration_timer := FrameTimer.new(knockback_duration, self)
 @export var knockback_vertical := -40
 enum KNOCKBACK_DIRECTIONS {LEFT = -1, RIGHT = 1}
 var knockback_direction: KNOCKBACK_DIRECTIONS = KNOCKBACK_DIRECTIONS.LEFT
-
-var attack_buffer_timer := FrameTimer.new(5, self)
 
 
 func _ready() -> void:
@@ -142,41 +143,43 @@ func pogo() -> void:
 
 
 func get_hit(body) -> void:
-	print('test')
 	if !iframes_duration_timer.is_stopped:
-		print('test2')
 		return
+	
+	UI.hp -= 1
+	if UI.hp <= 0:
+		on_no_hp()
+	UI.update_hp()
 	if body.position.x > position.x:
 		knockback_direction = KNOCKBACK_DIRECTIONS.LEFT
 	else:
 		knockback_direction = KNOCKBACK_DIRECTIONS.RIGHT
 	iframes_duration_timer.start()
-	print('testerino')
 	state_machine.change_state(state_machine.states_list.knockback)
 
 
+func on_no_hp() -> void:
+	print('game over!')
+
+
 func _on_iframes_timeout() -> void:
-	var test := hurtbox.get_overlapping_bodies()
-	if test:
-		print(test[0])
-		print('tested!')
-		get_hit(test[0])
-	
-	
+	var bodies := hurtbox.get_overlapping_bodies()
+	if bodies:
+		get_hit(bodies[0])
 
 
 func _on_drill_area_entered(area: Area2D) -> void:
-	#print(area)
+	if area is GoldDeposit:
+		area.on_hit()
 	if area.is_in_group('pogoable'):
 		pogo()
-		if area is GoldDeposit:
-			area.on_hit()
 
 
 func _on_drill_body_entered(body: Node2D) -> void:
 	if body is Slug:
-		pogo()
 		body.get_hit()
+	if body.is_in_group('pogoable'):
+		pogo()
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
