@@ -8,6 +8,9 @@ func enter() -> void:
 
 
 func update() -> void:
+	if !player.jump_coyote_timer.is_stopped:
+		if player.jump():
+			return
 	if player.dash():
 		return
 	if player.double_jump():

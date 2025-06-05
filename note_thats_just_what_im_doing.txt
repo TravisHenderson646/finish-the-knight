@@ -1,0 +1,6 @@
+slug movement
+	gonna make a left and right detector to see if the floor ends and turn around if so
+
+now what... maybe design a short intro where you get the jump very quickly and the drill soon after
+
+attempt refactoring body/area type checks in player.gd (didn't work)

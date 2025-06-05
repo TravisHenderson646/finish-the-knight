@@ -19,6 +19,7 @@ var coins := 0
 @export var jump_release_snap := 0.5
 var can_jump := false
 var jump_buffer_timer := FrameTimer.new(5, self)
+var jump_coyote_timer := FrameTimer.new(6, self)
 var double_jump_count = 1
 
 @export_category('Dash Stats')
@@ -190,12 +191,25 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
+	pass
+
+func _on_interaction_box_body_entered(body: Node2D) -> void:
+	if body is Gold:
+		UI.gold += 1
+		UI.update_gold()
+		body.destroy()
+
+
+func _on_interaction_box_area_entered(area: Area2D) -> void:
 	if area is DashPUP:
 		dash_unlocked = true
 		area.destroy()
-	if area is DoubleJumpPUP:
+	elif area is DoubleJumpPUP:
 		double_jump_unlocked = true
 		area.destroy()
-	if area is DrillPUP:
+	elif area is DrillPUP:
 		attack_unlocked = true
+		area.destroy()
+	elif area is JumpPUP:
+		jump_unlocked = true
 		area.destroy()

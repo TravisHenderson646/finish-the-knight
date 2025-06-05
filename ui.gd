@@ -1,19 +1,19 @@
 extends CanvasLayer
 
 
-@onready var coins_label: Label = %Label
+@onready var gold_label: Label = %Label
 @onready var hp1: ColorRect = $"HUD/1HP"
 @onready var hp2: ColorRect = $"HUD/2HP"
 @onready var hp3: ColorRect = $"HUD/3HP"
-var coins := 0
+var gold := 0
 var hp := 3
 
 func _ready() -> void:
-	coins_label.text = str(coins)
+	gold_label.text = str(gold)
 
 
-func update_coins() -> void:
-	coins_label.text = str(coins)
+func update_gold() -> void:
+	gold_label.text = str(gold)
 
 
 func update_hp() -> void:

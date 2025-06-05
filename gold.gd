@@ -20,13 +20,9 @@ func _physics_process(_delta: float) -> void:
 		velocity = velocity.bounce(collision.get_normal()) * coefficient_of_restitution
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
-		UI.coins += 1
-		UI.update_coins()
-		print(UI.coins)
-		spawn_particles()
-		queue_free()
+func destroy() -> void:
+	spawn_particles()
+	queue_free()
 
 
 func spawn_particles() -> void:

@@ -24,6 +24,9 @@ func update() -> void:
 	player.apply_direction()
 	if !player.is_on_floor():
 		state_machine.change_state(state_machine.states_list.fall)
+		var player_merely_fell = player.velocity.y == 0
+		if player_merely_fell:
+			player.jump_coyote_timer.start()
 		return
 	if player.direction.x == 0:
 		state_machine.change_state(state_machine.states_list.idle)

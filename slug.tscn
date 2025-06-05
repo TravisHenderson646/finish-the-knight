@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://di0plfiwr05rx"]
+[gd_scene load_steps=5 format=3 uid="uid://di0plfiwr05rx"]
 
 [ext_resource type="Script" uid="uid://xv4jkjhblukl" path="res://slug.gd" id="1_7k104"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(8, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm1ku"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd4k1"]
+size = Vector2(2, 2)
 
 [node name="Slug" type="CharacterBody2D" groups=["pogoable"]]
 collision_layer = 4
@@ -16,3 +22,19 @@ shape = SubResource("RectangleShape2D_7xaro")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.451305, 0.240975, 0.363576, 1)
 polygon = PackedVector2Array(-4, -2, 4, -2, 4, 2, -4, 2)
+
+[node name="LeftDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDetector"]
+position = Vector2(-7, 5)
+shape = SubResource("RectangleShape2D_sm1ku")
+
+[node name="RightDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightDetector"]
+position = Vector2(7, 5)
+shape = SubResource("RectangleShape2D_hd4k1")

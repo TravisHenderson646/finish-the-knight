@@ -9,7 +9,7 @@ size = Vector2(8, 8)
 size = Vector2(8, 6)
 
 [node name="GoldDeposit" type="Area2D" groups=["pogoable"]]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_yudlv")
 
