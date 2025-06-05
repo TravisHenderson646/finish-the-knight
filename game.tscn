@@ -7,10 +7,9 @@
 [node name="Game" type="Node"]
 
 [node name="TestLevel" parent="." instance=ExtResource("1_feb5d")]
-position = Vector2(-7, -1)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(1, -6)
+position = Vector2(27, -9)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

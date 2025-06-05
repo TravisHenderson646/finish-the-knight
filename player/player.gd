@@ -19,7 +19,7 @@ var coins := 0
 @export var jump_release_snap := 0.5
 var can_jump := false
 var jump_buffer_timer := FrameTimer.new(5, self)
-var jump_coyote_timer := FrameTimer.new(6, self)
+var jump_coyote_timer := FrameTimer.new(4, self)
 var double_jump_count = 1
 
 @export_category('Dash Stats')
@@ -47,7 +47,7 @@ var attack_cooldown_timer := FrameTimer.new(attack_cooldown, self)
 var attack_buffer_timer := FrameTimer.new(5, self)
 
 @export_category('Combat Stats')
-@export var iframes_duration := 40
+@export var iframes_duration := 60
 var iframes_duration_timer := FrameTimer.new(iframes_duration, self)
 @export var knockback_duration := 4
 var knockback_duration_timer := FrameTimer.new(knockback_duration, self)
@@ -90,6 +90,16 @@ func process_input():
 		dash_buffer_timer.start()
 	if Input.is_action_just_pressed('attack'):
 		attack_buffer_timer.start()
+
+
+func look_around() -> void:
+	if Input.is_action_pressed('look up'):
+		camera_remote_transform_2d.position.y = -35
+	elif Input.is_action_pressed('look down'):
+		camera_remote_transform_2d.position.y = 35
+	else:
+		camera_remote_transform_2d.position.y = 0
+		
 
 
 func attack() -> void:
@@ -148,11 +158,9 @@ func get_hit(body) -> void:
 		return
 	
 	UI.hp -= 1
+	UI.update_hp()
 	if UI.hp <= 0:
 		on_no_hp()
-	UI.update_hp()
-	global_position
-	print(body.position.x,'    ',  position.x)
 	if body.global_position.x > global_position.x:
 		knockback_direction = KNOCKBACK_DIRECTIONS.LEFT
 	else:

@@ -7,9 +7,9 @@ func enter() -> void:
 	player.velocity.y = player.JUMP_VELOCITY * 0.785
 	player.double_jump_count -= 1
 	player.jump_buffer_timer.stop()
-	var dust := Particle.create_particle(Vector2(player.position.x + 4, player.position.y + 4), Vector2(-player.direction.x/2.0 + 0.75, 1)/3.0, 10)
+	var dust := Particle.create_particle(Vector2(player.position.x, player.position.y + 2), Vector2(-player.direction.x/2.0 + 0.75, 1)/3.0, 10)
 	player.get_tree().root.add_child(dust)
-	var dust2 := Particle.create_particle(Vector2(player.position.x + 4, player.position.y + 4), Vector2(-player.direction.x/2.0 - 0.75, 1)/3.0, 10)
+	var dust2 := Particle.create_particle(Vector2(player.position.x, player.position.y + 2), Vector2(-player.direction.x/2.0 - 0.75, 1)/3.0, 10)
 	player.get_tree().root.add_child(dust2)
 
 

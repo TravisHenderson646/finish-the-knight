@@ -17,6 +17,7 @@ collision_mask = 2
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_sh265")
 metadata/_edit_lock_ = true
 
@@ -25,7 +26,7 @@ remote_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.128911, 0.439112, 0.383096, 1)
-polygon = PackedVector2Array(-3, -2, 4, -2, 4, 3, -3, 3)
+polygon = PackedVector2Array(-3.5, -2.5, 3.5, -2.5, 3.5, 3.5, -3.5, 3.5)
 metadata/_edit_lock_ = true
 
 [node name="StateMachine" type="Node" parent="."]
@@ -47,12 +48,12 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drill"]
 position = Vector2(-3.5, -2)
-polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
+polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
 
 [node name="Polygon2D" type="Polygon2D" parent="Drill"]
 position = Vector2(-3.5, -2)
-color = Color(0.317904, 0.238572, 0.293556, 1)
-polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
+color = Color(0.400973, 0.386974, 0.412929, 1)
+polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
 
 [node name="InteractionBox" type="Area2D" parent="."]
 collision_layer = 0
