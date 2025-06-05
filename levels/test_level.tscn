@@ -30,6 +30,9 @@ position = Vector2(28, 32)
 [node name="Slug" parent="." instance=ExtResource("8_wndkh")]
 position = Vector2(-14, 30)
 
+[node name="Slug4" parent="." instance=ExtResource("8_wndkh")]
+position = Vector2(35, 5)
+
 [node name="Slug2" parent="." instance=ExtResource("8_wndkh")]
 position = Vector2(83, 30)
 

@@ -151,7 +151,9 @@ func get_hit(body) -> void:
 	if UI.hp <= 0:
 		on_no_hp()
 	UI.update_hp()
-	if body.position.x > position.x:
+	global_position
+	print(body.position.x,'    ',  position.x)
+	if body.global_position.x > global_position.x:
 		knockback_direction = KNOCKBACK_DIRECTIONS.LEFT
 	else:
 		knockback_direction = KNOCKBACK_DIRECTIONS.RIGHT

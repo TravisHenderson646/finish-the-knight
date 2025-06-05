@@ -4,3 +4,5 @@ slug movement
 now what... maybe design a short intro where you get the jump very quickly and the drill soon after
 
 attempt refactoring body/area type checks in player.gd (didn't work)
+
+seeing if player scene can actually be centered at the origin
