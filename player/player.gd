@@ -99,7 +99,6 @@ func look_around() -> void:
 		camera_remote_transform_2d.position.y = 35
 	else:
 		camera_remote_transform_2d.position.y = 0
-		
 
 
 func attack() -> void:
@@ -156,7 +155,7 @@ func pogo() -> void:
 func get_hit(body) -> void:
 	if !iframes_duration_timer.is_stopped:
 		return
-	
+
 	UI.hp -= 1
 	UI.update_hp()
 	if UI.hp <= 0:
@@ -182,6 +181,8 @@ func _on_iframes_timeout() -> void:
 func _on_drill_area_entered(area: Area2D) -> void:
 	if area is GoldDeposit:
 		area.on_hit()
+	if area is GateLever:
+		area.on_hit()
 	if area.is_in_group('pogoable'):
 		pogo()
 
@@ -201,7 +202,8 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	pass
+	area
+
 
 func _on_interaction_box_body_entered(body: Node2D) -> void:
 	if body is Gold:

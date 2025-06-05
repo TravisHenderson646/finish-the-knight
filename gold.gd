@@ -1,7 +1,6 @@
 class_name Gold
 extends CharacterBody2D
 
-@onready var area_2d: Area2D = $Area2D
 const GOLD = preload("res://gold.tscn")
 var coefficient_of_restitution = 0.65
 
