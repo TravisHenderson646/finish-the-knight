@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://eyreqdvbvuwy"]
+[gd_scene load_steps=6 format=3 uid="uid://eyreqdvbvuwy"]
 
 [ext_resource type="Script" uid="uid://dat3b6iiuml7m" path="res://player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cgygwdd7k0k1x" path="res://player/state_machine.gd" id="2_onrkg"]
@@ -6,34 +6,67 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(7, 5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
+size = Vector2(5, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
+size = Vector2(9, 7)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 2.5)
+position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_sh265")
+metadata/_edit_lock_ = true
 
 [node name="CameraRemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(3, 2)
 color = Color(0.128911, 0.439112, 0.383096, 1)
-polygon = PackedVector2Array(-3, -2, 4, -2, 4, 3, -3, 3)
+polygon = PackedVector2Array(-3.5, -2.5, 3.5, -2.5, 3.5, 3.5, -3.5, 3.5)
+metadata/_edit_lock_ = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_onrkg")
 
-[node name="Nail" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
+metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Nail"]
-polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_rkbax")
+metadata/_edit_lock_ = true
 
-[node name="Polygon2D" type="Polygon2D" parent="Nail"]
-color = Color(0.317904, 0.238572, 0.293556, 1)
-polygon = PackedVector2Array(-2, 4, 9, 4, 9, 8, 4, 11, 3, 11, -2, 8)
+[node name="Drill" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+metadata/_edit_lock_ = true
 
-[connection signal="area_entered" from="Nail" to="." method="_on_nail_area_entered"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drill"]
+position = Vector2(-3.5, -2)
+polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
+
+[node name="Polygon2D" type="Polygon2D" parent="Drill"]
+position = Vector2(-3.5, -2)
+color = Color(0.400973, 0.386974, 0.412929, 1)
+polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
+
+[node name="InteractionBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionBox"]
+shape = SubResource("RectangleShape2D_g1dw6")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="area_entered" from="Drill" to="." method="_on_drill_area_entered"]
+[connection signal="body_entered" from="Drill" to="." method="_on_drill_body_entered"]
+[connection signal="area_entered" from="InteractionBox" to="." method="_on_interaction_box_area_entered"]
+[connection signal="body_entered" from="InteractionBox" to="." method="_on_interaction_box_body_entered"]

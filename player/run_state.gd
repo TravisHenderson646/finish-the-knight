@@ -5,8 +5,10 @@ extends State
 var previous_direction := 0
 
 func enter() -> void:
+	#print('run state entered')
 	previous_direction = player.direction.x
-	#print('grounded state entered')
+	player.dash_count = 1
+	player.double_jump_count = 1
 
 
 func exit() -> void:
@@ -22,6 +24,9 @@ func update() -> void:
 	player.apply_direction()
 	if !player.is_on_floor():
 		state_machine.change_state(state_machine.states_list.fall)
+		var player_merely_fell = player.velocity.y == 0
+		if player_merely_fell:
+			player.jump_coyote_timer.start()
 		return
 	if player.direction.x == 0:
 		state_machine.change_state(state_machine.states_list.idle)
@@ -33,8 +38,8 @@ func update() -> void:
 
 func spawn_dust() -> void:
 	if player.direction.x > 0:
-		var dust := Particle.new_particle(Vector2(player.position.x - 1, player.position.y + 4), Vector2(-player.direction.x, -1)/3, 20)
+		var dust := Particle.create_particle(Vector2(player.position.x - 4, player.position.y + 2), Vector2(-player.direction.x, -1)/3, 20)
 		player.get_tree().root.add_child(dust)
 	else:
-		var dust := Particle.new_particle(Vector2(player.position.x + 8, player.position.y + 4), Vector2(-player.direction.x, -1)/3, 20)
+		var dust := Particle.create_particle(Vector2(player.position.x + 4, player.position.y + 2), Vector2(-player.direction.x, -1)/3, 20)
 		player.get_tree().root.add_child(dust)

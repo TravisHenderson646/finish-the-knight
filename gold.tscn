@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qbc0iqyb7jjg"]
+
+[ext_resource type="Script" uid="uid://x063i2l58ito" path="res://gold.gd" id="1_1rp5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rp5q"]
+size = Vector2(2, 2)
+
+[node name="Gold" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_1rp5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1rp5q")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 0.454902, 1)
+polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)

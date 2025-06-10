@@ -3,12 +3,17 @@ extends State
 
 
 func enter() -> void:
-	pass
 	#print('fall state entered')
+	pass
 
 
 func update() -> void:
+	if !player.jump_coyote_timer.is_stopped:
+		if player.jump():
+			return
 	if player.dash():
+		return
+	if player.double_jump():
 		return
 	player.attack()
 	player.apply_gravity()

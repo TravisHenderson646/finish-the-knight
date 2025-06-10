@@ -1,6 +1,7 @@
 BEST SOLUTION:
-	position origin of player scene at top left of CollisionShape2D and Polygon2D (instead of at center)
-	+ turn on rendering/2d/snap/snap_2d_transforms_to_pixel
+	----- REDACTED------ position top left (instead of center) of CollisionShape2D and Polygon2D at origin of player scene ----- REDACTED------
+	turn on rendering/2d/snap/snap_2d_transforms_to_pixel
+		- This might be all it takes it seems...
 
 possible hack fixes for how if I use proper crisp pixel settings the collision shape goes 1 pixel into the ground
 	use stretch mode: canvas_items

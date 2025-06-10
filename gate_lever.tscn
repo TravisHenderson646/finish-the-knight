@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmwskjta32df2"]
+
+[ext_resource type="Script" uid="uid://dqqm0hxcogeat" path="res://gate_lever.gd" id="1_jymrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4dkr"]
+size = Vector2(8, 8)
+
+[node name="GateLever" type="Area2D" groups=["pogoable"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_jymrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k4dkr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.286292, 0.503653, 0.604174, 1)
+polygon = PackedVector2Array(-4, 4, -4, 0, -1, 0, -4, -4, -2, -4, 1, 0, 4, 0, 4, 4)

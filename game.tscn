@@ -1,62 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvg320pj7354l"]
+[gd_scene load_steps=4 format=3 uid="uid://cvg320pj7354l"]
 
 [ext_resource type="PackedScene" uid="uid://cx57a4tjaiu4e" path="res://levels/test_level.tscn" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
-[ext_resource type="PackedScene" uid="uid://ch7o3xhr5ndtc" path="res://levels/pogo_tile.tscn" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
 
 [node name="Game" type="Node"]
 
 [node name="TestLevel" parent="." instance=ExtResource("1_feb5d")]
+position = Vector2(3, 0)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(25, 24)
+position = Vector2(-39, -2)
+jump_unlocked = false
+double_jump_unlocked = false
+dash_unlocked = false
+attack_unlocked = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 process_callback = 0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 0.38
 script = ExtResource("4_fc0e3")
-
-[node name="PogoTile" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(76, 50)
-
-[node name="PogoTile5" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-6, 28)
-
-[node name="PogoTile6" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-107, 86)
-
-[node name="PogoTile7" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-52, 28)
-
-[node name="PogoTile8" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-96, 28)
-
-[node name="PogoTile9" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-109, 20)
-
-[node name="PogoTile10" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-146, 28)
-
-[node name="PogoTile11" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-181, 19)
-
-[node name="PogoTile12" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-179, 72)
-
-[node name="PogoTile13" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-163, 105)
-
-[node name="PogoTile14" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-133, 96)
-
-[node name="PogoTile2" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(84, 42)
-
-[node name="PogoTile3" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(88, 34)
-
-[node name="PogoTile4" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(91, 26)

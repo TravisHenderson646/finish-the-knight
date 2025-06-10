@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://cnnqfws53tbro"]
 
 [ext_resource type="TileSet" uid="uid://cije06o0yhf7x" path="res://levels/black_tile_set.tres" id="1_jirdo"]
-[ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://enemy.tscn" id="2_bt44k"]
+[ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://slug.tscn" id="2_bt44k"]
 
 [node name="Level1" type="Node2D"]
 
