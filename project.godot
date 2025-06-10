@@ -31,7 +31,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
 
 [global_group]
 

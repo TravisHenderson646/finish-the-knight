@@ -30,4 +30,3 @@ func on_hit() -> void:
 func spawn_gold() -> void:
 	var gold = Gold.create_gold(position, Vector2(randf_range(-30, 30), -50))
 	get_tree().root.add_child(gold)
-	

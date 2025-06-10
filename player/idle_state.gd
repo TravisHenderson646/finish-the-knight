@@ -15,10 +15,10 @@ func exit() -> void:
 func update() -> void:
 	if player.dash():
 		return
-		
+
 	if player.jump():
 		return
-		
+
 	if !player.is_on_floor():
 		state_machine.change_state(state_machine.states_list.fall)
 		return
@@ -26,7 +26,7 @@ func update() -> void:
 		spawn_dust()
 		state_machine.change_state(state_machine.states_list.run)
 		return
-	
+
 	player.look_around()
 
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv4h5smn858yy"]
+
+[ext_resource type="Script" uid="uid://x063i2l58ito" path="res://gold.gd" id="1_cqtl0"]
+[ext_resource type="Texture2D" uid="uid://qrjkdsoqas5v" path="res://art/gold_nugget2.png" id="2_cqtl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rp5q"]
+size = Vector2(2, 2)
+
+[node name="GoldNugget2" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_cqtl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1rp5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cqtl0")

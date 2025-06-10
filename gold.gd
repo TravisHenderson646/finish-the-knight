@@ -2,14 +2,21 @@ class_name Gold
 extends CharacterBody2D
 
 const GOLD = preload("res://gold.tscn")
+const GOLD_2 = preload('res://gold_2.tscn')
 var coefficient_of_restitution = 0.65
 
 
 static func create_gold(_position: Vector2, _velocity: Vector2) -> Gold:
-	var new_gold = GOLD.instantiate()
-	new_gold.velocity = _velocity
-	new_gold.position = _position
-	return(new_gold)
+	if randf() < 0.5:
+		var new_gold = GOLD.instantiate()
+		new_gold.velocity = _velocity
+		new_gold.position = _position
+		return(new_gold)
+	else:
+		var new_gold = GOLD_2.instantiate()
+		new_gold.velocity = _velocity
+		new_gold.position = _position
+		return(new_gold)
 
 
 func _physics_process(_delta: float) -> void:
