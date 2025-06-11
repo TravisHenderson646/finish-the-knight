@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bbcgskafa3qhh" path="res://ui.gd" id="1_3b2b5"]
 
 [node name="UI" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_3b2b5")
 
 [node name="HUD" type="Control" parent="."]

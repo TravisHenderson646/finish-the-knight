@@ -6,6 +6,7 @@ func enter() -> void:
 	player.dash_count = 1
 	player.double_jump_count = 1
 	player.velocity.x = 0
+	player.animated_sprite_2d.play('idle')
 
 
 func exit() -> void:

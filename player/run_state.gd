@@ -9,6 +9,7 @@ func enter() -> void:
 	previous_direction = player.direction.x
 	player.dash_count = 1
 	player.double_jump_count = 1
+	player.animated_sprite_2d.play('run')
 
 
 func exit() -> void:

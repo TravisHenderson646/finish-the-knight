@@ -7,7 +7,7 @@ var coefficient_of_restitution = 0.65
 
 
 static func create_gold(_position: Vector2, _velocity: Vector2) -> Gold:
-	if randf() < 0.5:
+	if randf() < 0.75:
 		var new_gold = GOLD.instantiate()
 		new_gold.velocity = _velocity
 		new_gold.position = _position

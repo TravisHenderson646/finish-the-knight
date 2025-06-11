@@ -5,8 +5,10 @@ extends CharacterBody2D
 @onready var state_machine: StateMachine = $StateMachine
 @onready var drill: Area2D = $Drill
 @onready var hurtbox: Area2D = $Hurtbox
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var direction := Vector2i()
 var coins := 0
+var previous_animation:String
 
 @export_category('Movement Stats')
 @export var SPEED := 40.0
@@ -94,6 +96,8 @@ func process_input():
 
 func look_around() -> void:
 	if Input.is_action_pressed('look up'):
+		#var tween = create_tween()
+		#tween.tween_property(camera_remote_transform_2d, 'position', Vector2(camera_remote_transform_2d.position.x, camera_remote_transform_2d.position.y - 35), 10)
 		camera_remote_transform_2d.position.y = -35
 	elif Input.is_action_pressed('look down'):
 		camera_remote_transform_2d.position.y = 35
@@ -108,6 +112,8 @@ func attack() -> void:
 	attack_cooldown_timer.start()
 	add_child(drill)
 	attack_duration_timer.start()
+	previous_animation = animated_sprite_2d.animation
+	animated_sprite_2d.play('attack')
 
 func dash() -> bool:
 	if !dash_unlocked or dash_buffer_timer.is_stopped or !dash_cooldown_timer.is_stopped or !dash_count or !attack_duration_timer.is_stopped:
@@ -202,7 +208,7 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	area
+	pass
 
 
 func _on_interaction_box_body_entered(body: Node2D) -> void:
@@ -225,3 +231,8 @@ func _on_interaction_box_area_entered(area: Area2D) -> void:
 	elif area is JumpPUP:
 		jump_unlocked = true
 		area.destroy()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == 'attack':  # Only revert if attack just ended
+		animated_sprite_2d.play(previous_animation)
