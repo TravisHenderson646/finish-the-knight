@@ -157,19 +157,13 @@ position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_g1dw6")
 
 [node name="Drill" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 12
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drill"]
 position = Vector2(-3.5, -2)
-polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
-
-[node name="Polygon2D" type="Polygon2D" parent="Drill"]
-position = Vector2(-3.5, -2)
-color = Color(0.400973, 0.386974, 0.412929, 1)
-polygon = PackedVector2Array(-2, 4, 8.5, 4, 8.5, 8, 4, 11, 3, 11, -2, 8)
+polygon = PackedVector2Array(0.5, 2, 7.5, 2, 7.5, 5, 4.5, 7, 4.5, 7, 3.5, 7, 0.5, 5)
 
 [node name="InteractionBox" type="Area2D" parent="."]
 visible = false

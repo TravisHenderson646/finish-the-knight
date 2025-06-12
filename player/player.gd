@@ -141,8 +141,10 @@ func apply_direction() -> void:
 		velocity.x = direction.x * SPEED
 		if direction.x == 1:
 			dash_direction = DASH_DIRECTIONS.RIGHT
+			animated_sprite_2d.flip_h = false
 		else:
 			dash_direction = DASH_DIRECTIONS.LEFT
+			animated_sprite_2d.flip_h = true
 	else:
 		velocity.x = 0
 
@@ -234,5 +236,5 @@ func _on_interaction_box_area_entered(area: Area2D) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation == 'attack':  # Only revert if attack just ended
+	if animated_sprite_2d.animation == 'attack':
 		animated_sprite_2d.play(previous_animation)

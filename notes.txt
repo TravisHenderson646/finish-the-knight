@@ -19,3 +19,6 @@ turn coyote time down
 use a marker2d or something w position to set location of where like jump dust should come from
 
 player sprite might not even need arms
+
+ability where you thrown bubble thing out in front above and you can pogo reset off it
+	maybe you can charge to throw it further for dash before

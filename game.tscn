@@ -7,7 +7,7 @@
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(156, 88)
+position = Vector2(142, 60)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

@@ -37,6 +37,11 @@ enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
 player=""
 pogoable=""
 
+[gui]
+
+theme/custom_font="uid://bfgryexxc0gw7"
+theme/default_font_antialiasing=0
+
 [input]
 
 up={
