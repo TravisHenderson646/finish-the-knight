@@ -1,5 +1,5 @@
 class_name Tortoise
-extends CharacterBody2D
+extends Enemy
 
 
 var gravity:= 3.33
@@ -59,7 +59,7 @@ func get_hit() -> void:
 
 func spawn_gold() -> void:
 	var gold = Gold.create_gold(position, Vector2(randf_range(-30, 30), -50))
-	get_tree().root.add_child(gold)
+	get_tree().root.call_deferred("add_child", gold)
 
 
 func spawn_particles() -> void:
