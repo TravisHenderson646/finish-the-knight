@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cnnqfws53tbro" path="res://levels/test_level.tscn" id="3_feb5d"]
-[ext_resource type="PackedScene" uid="uid://4a54mpjdpy3f" path="res://fly_guy_trap.tscn" id="4_7jktm"]
+[ext_resource type="PackedScene" uid="uid://dtdeq6mpjedvn" path="res://gnat.tscn" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
 
 [node name="Game" type="Node"]
@@ -20,5 +20,8 @@ script = ExtResource("4_fc0e3")
 
 [node name="TestLevel" parent="." instance=ExtResource("3_feb5d")]
 
-[node name="FlyGuyTrap" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(-13, 9)
+[node name="Gnat" parent="." instance=ExtResource("4_7jktm")]
+position = Vector2(14, 6)
+
+[node name="Gnat2" parent="." instance=ExtResource("4_7jktm")]
+position = Vector2(-53, -19)

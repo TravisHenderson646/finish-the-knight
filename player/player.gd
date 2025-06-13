@@ -203,6 +203,8 @@ func _on_drill_body_entered(body: Node2D) -> void:
 		body.get_hit()
 	if body is Tortoise:
 		body.get_hit()
+	if body is Gnat:
+		body.get_hit()
 	if body is BreakableTile:
 		body.destroy()
 	if body.is_in_group('pogoable'):
@@ -213,6 +215,8 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		get_hit(body)
 	if body is Tortoise:
+		get_hit(body)
+	if body is Gnat:
 		get_hit(body)
 
 

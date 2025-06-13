@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtdeq6mpjedvn"]
+
+[ext_resource type="Script" uid="uid://cudqp3mgjqra1" path="res://gnat.gd" id="1_w8van"]
+[ext_resource type="Texture2D" uid="uid://cil35nh1025sm" path="res://art/gnat.png" id="2_02et0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3a0m"]
+size = Vector2(3, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8van"]
+radius = 15.0
+
+[node name="Gnat" type="CharacterBody2D" groups=["pogoable"]]
+collision_layer = 12
+collision_mask = 0
+script = ExtResource("1_w8van")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_02et0")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_t3a0m")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w8van")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
