@@ -30,7 +30,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
@@ -123,6 +123,7 @@ attack={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Drillable"
 2d_physics/layer_5="Interactable"
+2d_physics/layer_6="Drill"
 
 [rendering]
 

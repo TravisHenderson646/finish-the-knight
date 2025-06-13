@@ -184,6 +184,9 @@ func _on_iframes_timeout() -> void:
 	var bodies := hurtbox.get_overlapping_bodies()
 	if bodies:
 		get_hit(bodies[0])
+	var areas := hurtbox.get_overlapping_areas()
+	if areas:
+		get_hit(areas[0])
 
 
 func _on_drill_area_entered(area: Area2D) -> void:
@@ -198,6 +201,8 @@ func _on_drill_area_entered(area: Area2D) -> void:
 func _on_drill_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		body.get_hit()
+	if body is Tortoise:
+		body.get_hit()
 	if body is BreakableTile:
 		body.destroy()
 	if body.is_in_group('pogoable'):
@@ -207,10 +212,13 @@ func _on_drill_body_entered(body: Node2D) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		get_hit(body)
+	if body is Tortoise:
+		get_hit(body)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	pass
+	print('test')
+	get_hit(area)
 
 
 func _on_interaction_box_body_entered(body: Node2D) -> void:
