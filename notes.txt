@@ -25,3 +25,5 @@ ability where you thrown bubble thing out in front above and you can pogo reset 
 
 
 should probably make the attack a state
+
+set RESET animation in fly guy trap

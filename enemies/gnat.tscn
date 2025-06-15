@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtdeq6mpjedvn"]
 
-[ext_resource type="Script" uid="uid://cudqp3mgjqra1" path="res://gnat.gd" id="1_w8van"]
+[ext_resource type="Script" uid="uid://cudqp3mgjqra1" path="res://enemies/gnat.gd" id="1_w8van"]
 [ext_resource type="Texture2D" uid="uid://cil35nh1025sm" path="res://art/gnat.png" id="2_02et0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3a0m"]
@@ -23,6 +23,7 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t3a0m")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

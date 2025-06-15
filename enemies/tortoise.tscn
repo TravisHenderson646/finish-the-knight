@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cebfy663g140t"]
 
-[ext_resource type="Script" uid="uid://caeeq0fbe8pl4" path="res://tortoise.gd" id="1_0ai35"]
+[ext_resource type="Script" uid="uid://caeeq0fbe8pl4" path="res://enemies/tortoise.gd" id="1_0ai35"]
 [ext_resource type="Texture2D" uid="uid://dhghp77pbu6yg" path="res://art/tortoise.png" id="2_3tt5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]

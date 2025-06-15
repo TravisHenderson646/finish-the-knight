@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://4a54mpjdpy3f"]
 
-[ext_resource type="Script" uid="uid://dki5f0vo60krb" path="res://fly_guy_trap.gd" id="1_mobw8"]
+[ext_resource type="Script" uid="uid://dki5f0vo60krb" path="res://enemies/fly_guy_trap.gd" id="1_mobw8"]
 [ext_resource type="Texture2D" uid="uid://bu6etaknjea8x" path="res://art/fly guy trap.png" id="2_b3k3s"]
 [ext_resource type="Texture2D" uid="uid://cu7we36xkwoga" path="res://art/fly guy trap right bait.png" id="3_pqcb6"]
 [ext_resource type="Texture2D" uid="uid://buqlo8sc0nvgk" path="res://art/fly guy trap left bait.png" id="4_xyncn"]
@@ -117,7 +117,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1.1667),
+"times": PackedFloat32Array(0, 0.433333, 1.1667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 0]
