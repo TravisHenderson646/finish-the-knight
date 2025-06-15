@@ -17,7 +17,6 @@ warnings/check_invalid_track_paths=false
 config/name="Finish the Knight"
 run/main_scene="uid://cvg320pj7354l"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

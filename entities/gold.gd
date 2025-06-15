@@ -1,8 +1,9 @@
 class_name Gold
 extends CharacterBody2D
 
-const GOLD = preload("res://gold.tscn")
-const GOLD_2 = preload('res://gold_2.tscn')
+
+const GOLD = preload("uid://qbc0iqyb7jjg")
+const GOLD_2 = preload("uid://bv4h5smn858yy")
 var coefficient_of_restitution = 0.65
 
 

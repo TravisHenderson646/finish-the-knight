@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qbc0iqyb7jjg"]
 
-[ext_resource type="Script" uid="uid://x063i2l58ito" path="res://gold.gd" id="1_1rp5q"]
+[ext_resource type="Script" uid="uid://x063i2l58ito" path="res://entities/gold.gd" id="1_1rp5q"]
 [ext_resource type="Texture2D" uid="uid://bb3kf8wvfu7xn" path="res://art/gold_nugget.png" id="2_1p357"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rp5q"]

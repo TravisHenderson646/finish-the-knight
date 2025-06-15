@@ -2,15 +2,15 @@
 
 [ext_resource type="TileSet" uid="uid://cije06o0yhf7x" path="res://levels/black_tile_set.tres" id="1_gojnm"]
 [ext_resource type="PackedScene" uid="uid://ch7o3xhr5ndtc" path="res://levels/pogo_tile.tscn" id="2_x25rp"]
-[ext_resource type="PackedScene" uid="uid://kfb7bginexhk" path="res://gold_deposit.tscn" id="3_gmgay"]
+[ext_resource type="PackedScene" uid="uid://kfb7bginexhk" path="res://entities/gold_deposit.tscn" id="3_gmgay"]
 [ext_resource type="PackedScene" uid="uid://qtxyg653hmva" path="res://levels/breakable_tile.tscn" id="4_w7r7j"]
-[ext_resource type="PackedScene" uid="uid://be8n0ykpqr2cm" path="res://pups/drill_pup.tscn" id="5_e7anx"]
-[ext_resource type="PackedScene" uid="uid://ct8w0r5d70ibr" path="res://jump_pup.tscn" id="5_o6mel"]
-[ext_resource type="PackedScene" uid="uid://qbc0iqyb7jjg" path="res://gold.tscn" id="6_e7anx"]
+[ext_resource type="PackedScene" uid="uid://be8n0ykpqr2cm" path="res://entities/pups/drill_pup.tscn" id="5_e7anx"]
+[ext_resource type="PackedScene" uid="uid://ct8w0r5d70ibr" path="res://entities/pups/jump_pup.tscn" id="5_o6mel"]
+[ext_resource type="PackedScene" uid="uid://qbc0iqyb7jjg" path="res://entities/gold.tscn" id="6_e7anx"]
 [ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://enemies/slug.tscn" id="8_wndkh"]
-[ext_resource type="PackedScene" uid="uid://d3uq4r4bgbjrx" path="res://gate.tscn" id="9_4n8tn"]
-[ext_resource type="PackedScene" uid="uid://bmwskjta32df2" path="res://gate_lever.tscn" id="10_wkb0e"]
-[ext_resource type="PackedScene" uid="uid://ddnf6gl0dc7ty" path="res://pups/dash_pup.tscn" id="11_wkb0e"]
+[ext_resource type="PackedScene" uid="uid://d3uq4r4bgbjrx" path="res://entities/gate.tscn" id="9_4n8tn"]
+[ext_resource type="PackedScene" uid="uid://bmwskjta32df2" path="res://entities/gate_lever.tscn" id="10_wkb0e"]
+[ext_resource type="PackedScene" uid="uid://ddnf6gl0dc7ty" path="res://entities/pups/dash_pup.tscn" id="11_wkb0e"]
 
 [node name="FirstLevel" type="Node2D"]
 
