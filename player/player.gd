@@ -95,15 +95,23 @@ func process_input():
 
 
 func look_around() -> void:
+	# todo i dont think this function makes any sense but it works for now
+	var target_y_offset := 35.0
+	var look_speed := 0.04
 	if Input.is_action_pressed('look up'):
-		#var tween = create_tween()
-		#tween.tween_property(camera_remote_transform_2d, 'position', Vector2(camera_remote_transform_2d.position.x, camera_remote_transform_2d.position.y - 35), 10)
-		camera_remote_transform_2d.position.y = -35
+		camera_remote_transform_2d.position.y = lerp(camera_remote_transform_2d.position.y, -50.0, look_speed)
 	elif Input.is_action_pressed('look down'):
-		camera_remote_transform_2d.position.y = 35
+		camera_remote_transform_2d.position.y = lerp(
+		camera_remote_transform_2d.position.y,
+		target_y_offset,
+		look_speed
+	)
 	else:
-		camera_remote_transform_2d.position.y = 0
-
+		camera_remote_transform_2d.position.y = lerp(
+		camera_remote_transform_2d.position.y,
+		0.0,
+		look_speed
+	)
 
 func attack() -> void:
 	if !attack_unlocked or attack_buffer_timer.is_stopped or !attack_cooldown_timer.is_stopped:
@@ -184,6 +192,9 @@ func _on_iframes_timeout() -> void:
 	var bodies := hurtbox.get_overlapping_bodies()
 	if bodies:
 		get_hit(bodies[0])
+	var areas := hurtbox.get_overlapping_areas()
+	if areas:
+		get_hit(areas[0])
 
 
 func _on_drill_area_entered(area: Area2D) -> void:
@@ -196,7 +207,7 @@ func _on_drill_area_entered(area: Area2D) -> void:
 
 
 func _on_drill_body_entered(body: Node2D) -> void:
-	if body is Slug:
+	if body is Enemy:
 		body.get_hit()
 	if body is BreakableTile:
 		body.destroy()
@@ -207,10 +218,15 @@ func _on_drill_body_entered(body: Node2D) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body is Slug:
 		get_hit(body)
+	if body is Tortoise:
+		get_hit(body)
+	if body is Gnat:
+		get_hit(body)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	pass
+	print('test')
+	get_hit(area)
 
 
 func _on_interaction_box_body_entered(body: Node2D) -> void:

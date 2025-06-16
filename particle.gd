@@ -3,7 +3,7 @@ extends Polygon2D
 
 var velocity: Vector2
 var duration: int
-const PARTICLE = preload('res://particle.tscn')
+const PARTICLE = preload('uid://bu5wiwxxiihjb')
 
 static func create_particle(_position: Vector2, _velocity: Vector2, _duration: int) -> Particle:
 	var new_particle = PARTICLE.instantiate()

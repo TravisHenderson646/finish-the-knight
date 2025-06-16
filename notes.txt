@@ -22,3 +22,11 @@ player sprite might not even need arms
 
 ability where you thrown bubble thing out in front above and you can pogo reset off it
 	maybe you can charge to throw it further for dash before
+<<<<<<< HEAD
+=======
+
+
+should probably make the attack a state
+
+set RESET animation in fly guy trap
+>>>>>>> ff665e9567410533184413bed39c541af7731591

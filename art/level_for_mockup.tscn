@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://di61ykxgujdr0"]
 
 [ext_resource type="TileSet" uid="uid://cije06o0yhf7x" path="res://levels/black_tile_set.tres" id="1_8ojsd"]
-[ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://slug.tscn" id="2_48mfm"]
+[ext_resource type="PackedScene" uid="uid://di0plfiwr05rx" path="res://enemies/slug.tscn" id="2_48mfm"]
 
 [node name="LevelForMockup" type="Node2D"]
 

@@ -1,0 +1,273 @@
+[gd_scene load_steps=11 format=3 uid="uid://4a54mpjdpy3f"]
+
+[ext_resource type="Script" uid="uid://dki5f0vo60krb" path="res://enemies/fly_guy_trap.gd" id="1_mobw8"]
+[ext_resource type="Texture2D" uid="uid://bu6etaknjea8x" path="res://art/fly guy trap.png" id="2_b3k3s"]
+[ext_resource type="Texture2D" uid="uid://cu7we36xkwoga" path="res://art/fly guy trap right bait.png" id="3_pqcb6"]
+[ext_resource type="Texture2D" uid="uid://buqlo8sc0nvgk" path="res://art/fly guy trap left bait.png" id="4_xyncn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvg1g"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua3rp"]
+size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_b3k3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("RightBait/FlyGuyTrapRightBait:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("LeftBait/FlyGuyTrapLeftBait:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Hitbox/CollisionShape2D:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(18, 4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LeftBait/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RightBait/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mobw8"]
+resource_name = "snap"
+length = 1.2
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"open",
+"time": 1.2
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"shut",
+"time": 0.4
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 1.1667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightBait/FlyGuyTrapRightBait:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftBait/FlyGuyTrapLeftBait:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hitbox/CollisionShape2D:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(4, 10), Vector2(18, 5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 2), Vector2(0, 4.5)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.1667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LeftBait/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RightBait/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.02, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqcb6"]
+_data = {
+&"RESET": SubResource("Animation_b3k3s"),
+&"snap": SubResource("Animation_mobw8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyncn"]
+size = Vector2(18, 5)
+
+[node name="FlyGuyTrap" type="Node2D"]
+script = ExtResource("1_mobw8")
+
+[node name="RightBait" type="Area2D" parent="." groups=["pogoable"]]
+collision_layer = 8
+collision_mask = 32
+
+[node name="FlyGuyTrapRightBait" type="Sprite2D" parent="RightBait"]
+position = Vector2(2, 3)
+texture = ExtResource("3_pqcb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBait"]
+position = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_qvg1g")
+
+[node name="LeftBait" type="Area2D" parent="." groups=["pogoable"]]
+collision_layer = 8
+collision_mask = 32
+
+[node name="FlyGuyTrapLeftBait" type="Sprite2D" parent="LeftBait"]
+position = Vector2(-2, 2)
+texture = ExtResource("4_xyncn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBait"]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_ua3rp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pqcb6")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b3k3s")
+hframes = 2
+
+[node name="Hitbox" type="Area2D" parent="." groups=["pogoable"]]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_xyncn")
+
+[node name="LeftGoldSpawnMarker" type="Marker2D" parent="."]
+visible = false
+position = Vector2(-4, 0)
+
+[node name="RightGoldSpawnMarker" type="Marker2D" parent="."]
+visible = false
+position = Vector2(5, 1)
+
+[connection signal="area_entered" from="RightBait" to="." method="_on_right_bait_area_entered"]
+[connection signal="area_entered" from="LeftBait" to="." method="_on_left_bait_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kfb7bginexhk"]
 
-[ext_resource type="Script" uid="uid://mtvyjdy6vq6j" path="res://gold_deposit.gd" id="1_yudlv"]
+[ext_resource type="Script" uid="uid://mtvyjdy6vq6j" path="res://entities/gold_deposit.gd" id="1_yudlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yudlv"]
 size = Vector2(8, 8)

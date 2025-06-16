@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvg320pj7354l"]
 
 [ext_resource type="PackedScene" uid="uid://eyreqdvbvuwy" path="res://player/player.tscn" id="2_feb5d"]
-[ext_resource type="PackedScene" uid="uid://di61ykxgujdr0" path="res://art/level_for_mockup.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cnnqfws53tbro" path="res://levels/test_level.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://bg7qr41rjyxba" path="res://camera_2d.gd" id="4_fc0e3"]
 
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
-position = Vector2(142, 60)
+position = Vector2(-3, -2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -17,4 +17,4 @@ drag_vertical_enabled = true
 drag_top_margin = 0.38
 script = ExtResource("4_fc0e3")
 
-[node name="LevelForMockup" parent="." instance=ExtResource("3_feb5d")]
+[node name="TestLevel" parent="." instance=ExtResource("3_feb5d")]

@@ -8,12 +8,15 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+
 [application]
 
 config/name="Finish the Knight"
 run/main_scene="uid://cvg320pj7354l"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -30,7 +33,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/time_tracker/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
@@ -123,6 +126,7 @@ attack={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Drillable"
 2d_physics/layer_5="Interactable"
+2d_physics/layer_6="Drill"
 
 [rendering]
 
