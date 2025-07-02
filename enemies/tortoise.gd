@@ -19,12 +19,12 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	velocity.y += gravity
-	
+
 	if hp == 2:
 		if is_on_wall():
 			moving_left = !moving_left
 			animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
-			
+
 		elif is_on_floor():
 			if moving_left:
 				if !left_detector.get_overlapping_bodies():

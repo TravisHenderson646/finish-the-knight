@@ -216,16 +216,12 @@ func _on_drill_body_entered(body: Node2D) -> void:
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	if body is Slug:
-		get_hit(body)
-	if body is Tortoise:
-		get_hit(body)
-	if body is Gnat:
+	print(body.get_class())
+	if body is Enemy:
 		get_hit(body)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	print('test')
 	get_hit(area)
 
 
