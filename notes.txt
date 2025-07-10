@@ -22,11 +22,12 @@ player sprite might not even need arms
 
 ability where you thrown bubble thing out in front above and you can pogo reset off it
 	maybe you can charge to throw it further for dash before
-<<<<<<< HEAD
-=======
-
 
 should probably make the attack a state
 
 set RESET animation in fly guy trap
->>>>>>> ff665e9567410533184413bed39c541af7731591
+
+ask chatgpt:
+	about desyncing data such as:
+		is it bad for the hud to pull the players hp every frame or should it just set its value whenever the player hp changes
+		same question with enemy changing direction, they could flip when they hit the wall, or just chech which direction they are going every frame and set flip
